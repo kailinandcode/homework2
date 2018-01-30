@@ -53,3 +53,55 @@ while(true) {
     drawRect();
   }
 }
+
+/* Making Changes to the Mondrian Style */
+//assigning a different stroke color for each shade of the rectangles: 
+//white rectangles have red strokes, red rectangles are outlined with black, yellow rectangles are filled with blue...etc
+
+rect(20, 20, 60, 60);
+background(255);
+colorMode(RGB, 250, 250, 250);
+//the thickness of each rectangle
+strokeWeight(3);
+
+function drawRect() {
+  var length = random(height);
+  	var size = random(width);
+  	rect(random(width), random(width), length, size);
+}
+
+while(true) {
+  background(0, 0, 255, 0.1);
+  //mondrian rectangles are colored either by: black, white, red, blue, or yellow;
+  //most of the rectangles are white
+ 	if (int(random(0,9)) > 3) {
+    fill('rgb(255, 255, 255)');
+    stroke(246, 2, 1);
+    drawRect();
+  }
+  //few are red
+  if (int(random(0, 9)) == 1) {
+    fill('rgb(246, 2, 1)');
+    stroke(255, 255, 255);
+ 		drawRect();
+  }
+  //few are yellow
+  if (int(random(0, 9)) == 0) {
+    fill('rgb(253, 237, 1)');
+    stroke(21, 127, 201);
+    drawRect();
+  }
+  //few are blue
+  if (int(random(0, 9)) == 2) {
+    fill('rgb(21, 127, 201)');
+    stroke(0, 0, 0);
+    drawRect();
+  }
+  //few are black
+  if (int(random(0, 9)) == 3) {
+    fill('rgb(255, 255, 255)');
+    stroke(246, 2, 1);
+    drawRect();
+  }
+}
+
