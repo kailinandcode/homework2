@@ -7,41 +7,49 @@ and modify it in your sketch. Give us your own take on Mondrian!*/
 //RGB: (31,127,201) -Mondrian Blue
 //RGB: (253,237,1) -Mondrian Yellow
 //RBG: (246,2,1) -Mondrian Red
+//RBG: (0, 0, 0) -White
+//RBG: (255, 255, 255) -Black
 
-//fill('rgb(100,55,0)');
+//synatx: fill('rgb(100,55,0)');
 
 rect(20, 20, 60, 60);
 background(255);
 colorMode(RGB, 250, 250, 250);
+//the thickness of each rectangle
+strokeWeight(2);
+
+function drawRect() {
+  var length = random(height);
+  	var size = random(width);
+  	rect(random(width), random(width), length, size);
+}
 
 while(true) {
   background(0, 0, 255, 0.1);
   //mondrian rectangles are colored either by: black, white, red, blue, or yellow;
- 	if (int(random(0,10)) > 3) {
+  //most of the rectangles are white
+ 	if (int(random(0,9)) > 3) {
     fill('rgb(255, 255, 255)');
-    var length = random(height);
-  	var size = random(width);
-  	rect(random(width), random(width), length, size);
+    drawRect();
   }
-  if (int(random(0, 10)) == 1) {
+  //few are red
+  if (int(random(0, 9)) == 1) {
     fill('rgb(246, 2, 1)');
-    var length = random(height);
-  	var size = random(width);
-  	rect(random(width), random(width), length, size);
+ 		drawRect();
   }
-  if (int(random(0, 10)) == 0) {
+  //few are yellow
+  if (int(random(0, 9)) == 0) {
     fill('rgb(253, 237, 1)');
-    var length = random(height);
-  	var size = random(width);
-  	rect(random(width), random(width), length, size);
+    drawRect();
   }
-  if (int(random(0, 10)) == 2) {
+  //few are blue
+  if (int(random(0, 9)) == 2) {
     fill('rgb(21, 127, 201)');
-    var length = random(height);
-  	var size = random(width);
-  	rect(random(width), random(width), length, size);
+    drawRect();
   }
-  
- 
+  //few are black
+  if (int(random(0, 9)) == 3) {
+    fill('rgb(255, 255, 255)');
+    drawRect();
+  }
 }
-rect(random(width), random(height), random(width), random(height))
